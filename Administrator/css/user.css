@@ -1,0 +1,78 @@
+#sub_labels
+{
+text-shadow:0px 0px 0px;
+-webkit-text-shadow:0px 0px 0px;
+-moz-text-shadow:0px 0px 0px;
+
+font-size:12px;
+color:#F0F0F0;
+border-radius:4px;
+-moz-border-radius:4px;
+-webkit-border-radius:4px;
+padding:4px; 
+background-color:#606060;
+font-weight:bold;	
+}
+
+#side_label_user
+{
+font-size:16px;
+
+font-weight:bold;
+background-color:#E0E0E0;
+color:#606060;
+border:1px solid lightgrey;
+border-radius:5px 5px 0px 0px;
+-moz-border-radius:5px 5px 0px 0px;
+-webkit-border-radius:5px 5px 0px 0px;
+
+}
+
+#data_user
+{
+	
+
+	border:1px solid lightgrey;
+	background-color:#F8F8F8;
+}
+
+
+#data_user1
+{
+	
+
+	border:1px solid lightgrey;
+	background-color:#F8F8F8;
+}
+
+#data_user2
+{
+	
+
+	border:1px solid lightgrey;
+	background-color:#F8F8F8;
+}
+#data_user3
+{
+	
+
+	border:1px solid lightgrey;
+	background-color:#F8F8F8;
+}
+
+
+#edu_type_label_user
+{
+	
+	padding-bottom:10px;
+	font-weight:bold;
+	color:#3366CC;
+	font-size:14px;
+	
+	font-family:arial;
+	text-shadow:2px 2px 5px grey;
+		-webkit-text-shadow:2px 2px 5px grey;
+		-moz-text-shadow:2px 2px 5px grey;
+		-o-text-shadow:2px 2px 5px grey;
+	
+}

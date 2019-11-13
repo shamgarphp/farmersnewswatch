@@ -1,0 +1,10 @@
+create table admin_profile(
+id int not null auto_increment,
+username varchar(100),
+password varchar(100),
+name varchar(100),
+mailid varchar(100),
+mobile_no varchar(100),
+official_mail varchar(100),
+date varchar(100);
+primary key(id));

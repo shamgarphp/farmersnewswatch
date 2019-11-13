@@ -1,0 +1,5 @@
+create table education_type(
+id int not null auto_increment,
+education_name varchar(100),
+unique key(education_name),
+primary key(id));

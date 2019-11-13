@@ -1,0 +1,12 @@
+create table edu_user_payment_online(
+id int not null auto_increment,
+datee varchar(100),
+timee varchar(100),
+dayy varchar(100),
+monthh varchar(100),
+yearr varchar(100),
+mgmt_code varchar(100),
+amount varchar(100),
+payment_date varchar(100),
+unique key(mgmt_code),
+primary key(id));

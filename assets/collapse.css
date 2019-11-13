@@ -1,0 +1,75 @@
+/*body {
+    background: #ddd;
+    margin: 0 auto;
+    max-width: 1024px;
+    font: normal 14px/1.2 'Helvetica Neue', 'Arial';
+}
+
+.fork {
+    border: 0;
+    position: absolute;
+    top: 0;
+    right: 0;
+}*/
+
+#kj-collapse {
+    border: solid 1px rgb(227, 230, 227);
+}
+
+    #kj-collapse h3 {
+        margin: 0;
+        background-color: rgb(234, 230, 230);
+        border-bottom: solid 1px rgb(220, 218, 218);
+    }
+
+        #kj-collapse h3 a {
+            background: url("../Images/sprite.png") 15px 13px no-repeat;
+            display: block;
+            padding: 10px;
+            padding-left: 10px;
+            margin: 0;
+            color: #101010;
+            text-decoration: none;
+            font-weight: 800;
+            font-size: 0.80em;
+        }
+
+        #kj-collapse h3:hover a {
+            background: rgb(243, 243, 243);
+            color: #000 !important;
+        }
+
+        #kj-collapse h3.open {
+            background: rgb(41, 41, 41);
+        }
+
+            #kj-collapse h3.open a {
+                background-position: 13px -25px;
+                color: #fff;
+            }
+
+        #kj-collapse h3 + div {
+            padding: 10px;
+        }
+
+    #kj-collapse h2 + div,
+    .example {
+        background: #fff;
+        overflow: hidden;
+        border-radius: 3px;
+        -moz-border-radius: 3px;
+        -webkit-border-radius: 3px;
+        margin-bottom: 20px;
+    }
+
+    #kj-collapse table td {
+        border: solid 1px #e8e6e6;
+        padding: 8px;
+    }
+
+/* Pre hide sections with JavaScript on
+--- */
+/*h3 + div {
+    display: none;
+}
+*/
