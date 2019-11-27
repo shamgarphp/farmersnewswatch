@@ -12,6 +12,7 @@ $getsignle->is_session();
 
 if(isset($_GET['unap']))
 {
+
     $id=base64_decode($_GET['unap']);
     
     $qry=mysqli_query($dbc,"update news_world_news set status='0' where id='".$id."' ");
@@ -37,11 +38,30 @@ if(isset($_GET['unap']))
 
 if(isset($_GET['ap']))
 {
-    $id=base64_decode($_GET['ap']);
+    $id=$_GET['ap'];
+    $date=date('Y-m-d');
+    if($_SESSION['client'] == 3){
+    	// $id=base64_decode($_GET['ap']);
+    	$qry=mysqli_query($dbc,"update news_world_news set mondal_status='1' where id='".$id."' ");
+    }
+    else if($_SESSION['client'] == 2){
+
+    	$qry = mysqli_query($dbc,"UPDATE `news_world_news` SET `distic_status` = '1' WHERE `news_world_news`.`id` = ".$id."");
+    	$status = 1;
+    }
+    else if($_SESSION['client'] == 1){
+    	// $id=base64_decode($_GET['ap']);
+    	$qry=mysqli_query($dbc,"update news_world_news set state_status='1' where id='".$id."' ");
+    	$status = 0;
+    }
     
-    $qry=mysqli_query($dbc,"update news_world_news set status='1' where id='".$id."' ");
     
-    	if($qry)
+    
+
+    $sql = mysqli_query($dbc,"INSERT INTO news_world_action_log (news_world_id,approved_by,approved_date,status)
+			VALUES ('".$id."','".$_SESSION['client']."','".$date."','".$status."')");
+    
+    if($qry)
 	{
 		echo"<script>
       alert('successfully changed display status into Approved');
@@ -399,25 +419,25 @@ if(isset($_GET['view']))
     </tr>
 
 	<?php
+
 		if($_SESSION['client']=="Admin")
         {
-  //           	$tab_name="news_world_news";
-		// $where="  order by category  asc";
-		$query = "SELECT * FROM news_world_news order by category  asc";
-		
+			$query = "SELECT * FROM news_world_news order by category  asc";		
         }
-        else
+        else if($_SESSION['client'] == 3)
         {
-         
-		// $tab_name="news_world_news";
-		// $where=" where posted_by='".$_SESSION['client']."' order by category  asc";
-        	$query = "SELECT * FROM news_world_news WHERE posted_by='".$_SESSION['client']."' order by category  asc";
-		
+        	$query = "SELECT * FROM news_world_news WHERE posted_by = 4 order by category  asc";	
+        }
+        else if($_SESSION['client'] == 2)
+        {
+        	$query = "SELECT n.*,l.id as lid FROM news_world_news n left join news_world_action_log l on n.id=l.news_world_id WHERE l.approved_by = 3";
+        }
+        else if($_SESSION['client'] == 1)
+        {
+        	$query = "SELECT n.*,l.status as lstatus,l.id as lid FROM news_world_news n left join news_world_action_log l on n.id=l.news_world_id WHERE l.approved_by = 2";
         }
 		
-		// $query = "SELECT * FROM news_world_news WHERE posted_by='".$_SESSION['client']."' order by category  asc";
     	$sele = mysqli_query($dbc,$query);
-		// $sele=$getsignle->select_query($tab_name,$where);
 		
 		$inc=0;
 		while($row=mysqli_fetch_array($sele))
@@ -496,38 +516,73 @@ if(isset($_GET['view']))
                         }
                     }
                     ?></td>
-                    <td><?php 
+                    <td><?php
                     if($_SESSION['client']=="Admin")
                     {
                     if($row['status']==1)
                     {
                         ?>
-                        <a href="?unap=<?php echo(base64_encode($row['id'])); ?>" onclick="javascript:if(confirm('Do you want to UnApprove display status')==true){return true}else{ return false;}"><span class="label label-success">Approved</span></a>
+                        <a href="?unap=<?php echo $row['id']; ?>" onclick="javascript:if(confirm('Do you want to UnApprove display status')==true){return true}else{ return false;}"><span class="label label-success">Approved</span></a>
                         <?php
                     }
                     else 
                     {
                         ?>
-                        <a href="?ap=<?php echo(base64_encode($row['id'])); ?>" onclick="javascript:if(confirm('Do you want to Approve display status')==true){return true}else{ return false;}"><span class="label label-danger">Unpproved</span></a>
+                        <a href="?ap=<?php echo $row['id']; ?>" onclick="javascript:if(confirm('Do you want to Approve display status')==true){return true}else{ return false;}"><span class="label label-danger">Unpproved</span></a>
+                        <?php
+                    }
+                    
+                    } 
+                    if($_SESSION['client']== 3)
+                    {
+                    if($row['mondal_status']==1)
+                    {
+                        ?>
+                        <a href="?unap=<?php echo $row['id']; ?>" onclick="javascript:if(confirm('Do you want to UnApprove display status')==true){return true}else{ return false;}"><span class="label label-success">Approved</span></a>
+                        <?php
+                    }
+                    else 
+                    {
+                        ?>
+                        <a href="?ap=<?php echo $row['id']; ?>" onclick="javascript:if(confirm('Do you want to Approve display status')==true){return true}else{ return false;}"><span class="label label-danger">Unpproved</span></a>
                         <?php
                     }
                     
                     }
-                    else
+                    if($_SESSION['client']== 2)
                     {
-                         if($row['status']==1)
-                    {
-                        ?>
-                        <span class="label label-success">Approved</span>
-                        <?php
-                    }
-                    else
+                    if($row['distic_status']==1)
                     {
                         ?>
-                                               <span class="label label-danger">Unpproved</span>
+                        <a href="?unap=<?php echo $row['id']; ?>" onclick="javascript:if(confirm('Do you want to UnApprove display status')==true){return true}else{ return false;}"><span class="label label-success">Approved</span></a>
                         <?php
                     }
+                    else 
+                    {
+                        ?>
+                        <a href="?ap=<?php echo $row['id']; ?>" onclick="javascript:if(confirm('Do you want to Approve display status')==true){return true}else{ return false;}"><span class="label label-danger">Unpproved</span></a>
+                        <?php
                     }
+                    
+                    }
+
+                    if($_SESSION['client']== 1)
+                    {
+                    if($row['state_status']==1)
+                    {
+                        ?>
+                        <a href="?unap=<?php echo $row['id']; ?>" onclick="javascript:if(confirm('Do you want to UnApprove display status')==true){return true}else{ return false;}"><span class="label label-success">Approved</span></a>
+                        <?php
+                    }
+                    else 
+                    {
+                        ?>
+                        <a href="?ap=<?php echo $row['id']; ?>" onclick="javascript:if(confirm('Do you want to Approve display status')==true){return true}else{ return false;}"><span class="label label-danger">Unpproved</span></a>
+                        <?php
+                    }
+                    
+                    }                    
+                    
                     ?></td>
                     
                    

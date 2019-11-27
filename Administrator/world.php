@@ -153,15 +153,17 @@ $filetype = "1";
 	    $st=0;
 	}
 
-  $sql = "INSERT INTO news_world_news (category,created_date,created_time,created_day,created_month,created_year,news_title,state,district,mandal,village,content,file_type,file_content,admin_status,posted_userid,status,posted_by)
-VALUES ('".$_POST['category']."','".$date."','".$time."','".$day."','".$month."','".$year."','".$i_title."','" .$state. "','".$district. "','".$mandal. "','".$village. "','".$i_edit."','".$filetype."','".$dyna."','1','".$post_code."','".$st."','".$_SESSION['head']."')";
+  $sql = "INSERT INTO news_world_news (category,created_date,created_time,created_day,created_month,created_year,news_title,state,district,mandal,village,content,file_type,file_content,admin_status,posted_userid,status,posted_by) VALUES ('".$_POST['category']."','".$date."','".$time."','".$day."','".$month."','".$year."','".$i_title."','" .$state. "','".$district. "','".$mandal. "','".$village. "','".$i_edit."','".$filetype."','".$dyna."','1','".$post_code."','".$st."','".$_SESSION['head']."')";
+
+  // $sql = mysqli_query($dbc,"INSERT INTO news_world_action_log (news_world_id,approved_by,approved_date,status)
+  //     VALUES ('".$id."','".$_SESSION['client']."','".$date."','".$status."')");
 
 // echo $sql;exit;
 
 
 
  $res = mysqli_query($dbc,$sql);
-
+ 
  // print_r($res);exit;
 
 	
