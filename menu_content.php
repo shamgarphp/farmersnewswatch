@@ -33,7 +33,7 @@ require_once"conn.php";
                             <h3 class="section-name" title="Corporate Cover">
                             <a href="javascript:void(0)" title="Corporate Cover">
                             <?php
-                            echo(base64_decode($_GET['name']));
+                            //echo(base64_decode($_GET['name']));
                             if(isset($_GET['data'])){
                             $categ  = base64_decode($_GET['data']);
                             }
@@ -107,19 +107,17 @@ require_once"conn.php";
                     <div class="row" id="citydata">
 
                         <?php
-
-                        $qry=mysqli_query($conn,"select * from news_world_news where category='".$categ."' and status='1' order by id desc ");
+                        $qry=mysqli_query($conn,"select * from news_world_news where category='".$categ."' and mondal_status='1' or status='1' order by id desc ");
                         // print_r("select * from news_world_news where category='".$categ."' and status='1' and cityid='".$city."' order by id desc ");
                         while($row=mysqli_fetch_array($qry))
                         {    
-                        if($row['category']=="Magazines")
-                        {
-                            ?>
+                        if($row['category']=="Magazines" || $row['category']=="Industry_News")
+                        {?>
                                 <div class="col-md-6">
                                     <div class="home-news-block">
                                         <a href="content_data.php?id=<?php echo(base64_encode($row['id'])); ?>&category=<?php echo($_GET['name']); ?>&date_time=<?php echo($row['created_date']." ".$row['created_time']); ?>&title=<?php echo(base64_encode($row['news_title'])); ?>" title="<?php echo($row['news_title']); ?>">
                                             <figure>
-                                                <img class="lazy"  src="Administrator/News_Uploads/Worldnews/<?php echo($row['file_content_pdf']); ?>">
+                                                <img class="lazy"  src="Administrator/News_Uploads/Worldnews/<?php echo($row['file_content']); ?>">
                                             </figure>
                                         </a>
                                         <h4 title="<?php echo($row['news_title']); ?>">

@@ -44,7 +44,7 @@ require_once"conn.php";
             <a href="javascript:void(0)" >
 			<?php
 			
-			echo(base64_decode($_GET['title']));
+			//echo(base64_decode($_GET['title']));
 			
 			?>
 			
@@ -63,12 +63,12 @@ require_once"conn.php";
 
 	<?php
 	$category="";
-	$qry=mysqli_query($conn,"select * from  news_world_news where id='".base64_decode($_GET['id'])."' and status='1' ");
+	$qry=mysqli_query($conn,"select * from  news_world_news where id='".base64_decode($_GET['id'])."' and status='1' or mondal_status='1' ");
 	if($row=mysqli_fetch_array($qry))
 	{
 		$category=$row['category'];
 		
-		if($category=="Magazines")
+		if($category=="Magazines" || $category=="Industry_News")
 		{
 			?>
 			
@@ -76,12 +76,7 @@ require_once"conn.php";
                     <a href="javascript:void(0)" title="<?php echo($row['news_title']); ?>">
 			            <figure>   
 							<div class="col-sm-12" style="border:0px solid red;margin-top:10px;padding:0px;height:600px;">
-<!-- 								<iframe src="http://flowpaper.com/flipbook/http://farmerwatcher.farmersnewswatch.com/Administrator/News_Uploads/Worldnews/<?php echo($row['file_content']); ?>" height="100%" width="100%"></iframe>  -->
 								<iframe src="http://flowpaper.com/flipbook/http://www.farmersnewswatch.com//Administrator/News_Uploads/Worldnews/<?php echo($row['file_content']); ?>" height="100%" width="100%"></iframe> 
-							
-								<!-- flipbook markup -->
-								<!-- <div class="ipgs-flipbook" src="Administrator/News_Uploads/Worldnews/<?php echo($row['file_content']); ?>" height="100%" width="100%"></div> -->
-								<!-- /end flipbook markup -->
 							</div>
 						</figure>
                     </a>
@@ -110,7 +105,7 @@ require_once"conn.php";
 <?php
 
 
-echo($row['content']);
+//echo($row['content']);
 
 
 
@@ -163,8 +158,8 @@ echo($row['content']);
                 <div class="col-md-3" >
 										<?php
  
-	$qryp=mysql_query("select * from  promotions order by priority asc,id desc ");
-	while($row_p=mysql_fetch_array($qryp))
+	$qryp=mysqli_query($conn,"select * from  promotions order by priority asc,id desc ");
+	while($row_p=mysqli_fetch_array($qryp))
 	{
 	?>
 					
@@ -201,12 +196,12 @@ echo($row['content']);
 
 <?php
  
-	$qry=mysql_query("select * from news_world_news where category='".$category."' order by id desc limit 0,6");
-	while($row=mysql_fetch_array($qry))
+	$qry=mysqli_query($conn,"select * from news_world_news where category='".$category."' order by id desc limit 0,6");
+	while($row=mysqli_fetch_array($qry))
 	{
 		 $category=$row['category'];
 		$name_name="";
-		if($category=="Magazines")
+		if($category=="Magazines" || $category=="Industry_News")
 		{
 			$name_name=$row['file_content_pdf'];
 		}

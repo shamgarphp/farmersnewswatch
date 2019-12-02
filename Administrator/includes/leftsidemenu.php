@@ -48,195 +48,7 @@
                         </div>
                                                     <div class="sidebar-category sidebar-category-visible" >
                                 <div class="category-content no-padding">
-                                    <ul class="navigation navigation-main navigation-accordion">
-                                      <!--  <li>
-                                            <a href="javascript:void()" id="blds" class="has-ul active"><i class="glyphicon glyphicon-th"></i><span style="color:white;">Dashboard</span></a>
-                                            <ul data-index="0" style="display: none;margin-top:-2px;" class="hidden-ul">
-                                                <li><a id="subbold" href="dashboard.php" style="color:white;">Dashboard</a></li>
-                                            </ul>
-                                        </li>
-										
-										
-										
-										
-																	
-										
-										
-										
-										
-										
-										
-										
-										 <li>
-                                            <a href="javascript:void()" id="blds" class="has-ul"><i class="glyphicon glyphicon-wrench"></i><span style="color:white;">Settings</span></a>
-                                            <ul class="hidden-ul" style="margin-top:-2px;">
-                                                <li>
-                                                    <a id="subbold" href="javascript:void()" class="has-ul">Education Type</a>
-                                                    <ul class="hidden-ul">
-                                                        <li><a href="add_edu_type.php?add_edu" id="subbold">Add</a></li>
-                                                        <li><a href="add_edu_type.php?view_edu" id="subbold">View</a></li>
-                                                    </ul>
-                                                </li>
-                                                <li>
-                                                    <a href="javascript:void()" id="subbold" class="has-ul">Package</a>
-                                                    <ul class="hidden-ul">
-                                                        <li><a href="add_edu_package.php" id="subbold">Add</a></li>
-                                                        <li><a href="view_edu_package.php" id="subbold">View</a></li>                     </ul>
-                                                </li>
-                                                
-                                                
-                                                <li>
-                                                    <a href="javascript:void()" id="subbold" class="has-ul">Franchise Package</a>
-                                                    <ul class="hidden-ul">
-                                                        <li><a href="add_fra_package.php" id="subbold">Add</a></li>
-                                                        <li><a href="view_fra_package.php" id="subbold">View</a></li>
-													</ul>
-                                                </li>
-                                                
-                                                
-										                                                <li>
-                                                    <a href="javascript:void()" id="subbold" class="has-ul">Country</a>
-                                                    <ul class="hidden-ul">
-                                                        <li><a href="add_edu_country.php" id="subbold">Add</a></li>
-                                                        <li><a href="view_edu_country.php" id="subbold">View</a></li>                     </ul>
-                                                </li>
-										                                                <li>
-                                                    <a href="javascript:void()" id="subbold" class="has-ul">State</a>
-                                                    <ul class="hidden-ul">
-                                                        <li><a href="add_edu_state.php" id="subbold">Add</a></li>
-                                                        <li><a href="view_edu_state.php" id="subbold">View</a></li>                     </ul>
-                                                </li>
-										                                                <li>
-                                                    <a href="javascript:void()" id="subbold" class="has-ul">City</a>
-                                                    <ul class="hidden-ul">
-                                                        <li><a href="add_edu_city.php" id="subbold">Add</a></li>
-                                                        <li><a href="view_edu_city.php" id="subbold">View</a></li>                     </ul>
-                                                </li>
-										
-										</ul>
-										</li>
-										
-										
-										
-										
-										
-										
-										
-										
-                                        <li>
-                                            <a href="javascript:void()" id="blds" class="has-ul"><i class="glyphicon glyphicon-user"></i><span style="color:white;">User Accounts</span></a>
-                                            <ul class="hidden-ul" style="margin-top:-2px;">
-                                                <li><a id="subbold" href="edu_users.php">Add User</a></li>
-                                                <li><a id="subbold" href="edu_users_reports.php">User Reports</a></li>
-                          
-										   </ul>
-                                        </li>
-										
-									 
-																				
-										<li>
-                                            <a href="javascript:void()" id="blds" class="has-ul"><i class="glyphicon glyphicon-sort-by-attributes-alt"></i><span style="color:white;">Universal Promotions</span></a>
-                                            <ul class="hidden-ul" style="margin-top:-2px;">
-                                                <li><a id="subbold" href="add_edu_promotions.php">Add Promotions</a></li>
-  			</ul>
-                                        </li>
-		
-
-										<li>
-                                            <a href="javascript:void()" id="blds" class="has-ul"><i class="glyphicon glyphicon-sort-by-attributes-alt"></i><span style="color:white;">Universal Postings</span></a>
-                                            <ul class="hidden-ul" style="margin-top:-2px;">
-                                                <li><a id="subbold" href="universal_postings.php">Add Postings</a></li>
-												<li><a id="subbold" href="view_universal_postings.php">View Postings</a></li>
-												
-											</ul>
-                                        </li>
-												
-										
-																		
-										<li>
-                                            <a href="javascript:void()" id="blds" class="has-ul"><i class="glyphicon glyphicon-transfer"></i><span style="color:white;">Integration</span></a>
-                                            <ul class="hidden-ul" style="margin-top:-2px;">
-                                                <li><a id="subbold" href="smsgateway.php">SMS Gateway</a></li>
-                                                <li><a id="subbold" href="paymentgateway.php">Payment Gateway</a></li>
-	
-											</ul>
-                                        </li>
-										
-										
-										<li>
-                                            <a href="javascript:void()" id="blds" class="has-ul"><i class="glyphicon glyphicon-open"></i><span style="color:white;">Bslate Library</span></a>
-                                            <ul class="hidden-ul" style="margin-top:-2px;">
-                                                
-                                                <li>
-                                                    <a id="subbold" href="javascript:void()" class="has-ul">PlaySchool Books/Videos</a>
-                                                    <ul class="hidden-ul">
-                                                        <li><a href="ply-board-admin.php" id="subbold">Board</a></li>                     
-                                                        <li><a href="ply-class-admin.php" id="subbold">Class </a></li>
-                                                        <li><a href="admin-library-playschool.php" id="subbold">Play Books/Videos </a></li>                                                                                                             
-                                                    </ul>
-                                                </li>
-                                                
-                                      
-												 <li>
-                                                    <a id="subbold" href="javascript:void()" class="has-ul">School Books</a>
-                                                    <ul class="hidden-ul">
-                                                        <li><a href="admin_board.php?add_edu" id="subbold">Board</a></li>
-                                                        <li><a href="admin_class.php?view_edu" id="subbold">Class</a></li>
-														
-                                                        <li><a href="admin_scl_library.php?view_edu" id="subbold">Add Books</a></li>
-                                                    </ul>
-                                                </li>
-												
-												 <li>
-                                                    <a id="subbold" href="javascript:void()" class="has-ul">College Books</a>
-                                                    <ul class="hidden-ul">
-                                                        <li><a href="admin_mgmt_course.php?add_edu" id="subbold">Course</a></li>
-                                                        <li><a href="admin_mgmt_branches.php?view_edu" id="subbold">Branch</a></li>
-														<li><a href="admin_mgmt_year.php?add_edu" id="subbold">Year</a></li>
-                                                        <li><a href="admin_mgmt_semister.php?view_edu" id="subbold">Semister</a></li>
-                                                        <li><a href="admin_clg_library.php?view_edu" id="subbold">Add Books</a></li>
-                                                    </ul>
-                                                </li>
-                                    
-												
-												<li> <a href="javascript:void()" id="blds" class="has-ul"><span style="color:white;">Institute Library</span></a>
-                                                  <ul class="hidden-ul" style="margin-top:-2px;">
-                                                        <li><a href="admin_course.php" id="subbold">Course</a></li>
-                                                    		 <li><a href="admin_inst_library.php" id="subbold">Add Institute Library</a></li>
-                                                    </ul>
-												
-												</li>
-												
-												<li><a href="javascript:void()" id="blds" class="has-ul"><span style="color:white;">Tuitions Library</span></a>
-                                                    <ul class="hidden-ul" style="margin-top:-2px;">
-                                                        <li><a href="add_new_class.php?add_edu" id="subbold">Class</a></li>
-                                                        <li><a href="add_subjects.php?view_edu" id="subbold">Subjects</a></li>
-														<li><a href="admin_tut_library.php?view_edu" id="subbold">Add Tutions Library</a></li>
-                                                    </ul>
-											    </li>
-
-											</ul>
-                                        </li>
-										
-																	
-										<li>
-                                            <a href="javascript:void()" id="blds" class="has-ul"><i class="glyphicon glyphicon-tags"></i><span style="color:white;">FeedBacks</span></a>
-                                            <ul class="hidden-ul" style="margin-top:-2px;">
-                                                <li><a id="subbold" href="feedback_file.php">General Feedbaks</a></li>
-                                                <li><a id="subbold" href="edu_complaints.php">School / College Feedbacks</a></li>
-                                                <li><a id="subbold" href="individual_feedbacks.php">Individual Students Feedbacks</a></li>
-
-											</ul>
-                                        </li>
-										
-										
-										
-																	
-										<li>
-                                            <a href="careers.php" id="blds"><i class="glyphicon glyphicon-tags"></i><span style="color:white;">Careers</span></a>
-
-                                        </li>-->
-                                        
+                                    <ul class="navigation navigation-main navigation-accordion">                                        
                                         
                                         	<?php
 											 if($_SESSION['client']=="Admin")
@@ -268,24 +80,53 @@
                                             {
                                                 ?>
                                                 
-                                                 <li style="text-align:left;">
-                                            <a href="javascript:void()" id="blds" class="has-ul"><i class="fa fa-newspaper-o" style="font-size:16px"></i><span style="color:white;">Menu Bar</span></a>
-                                            <ul class="hidden-ul" style="margin-top:-2px;"> 
-                                                <li><a id="subbold" href="world.php">Select Category</a></li>
-                                                <!-- <li><a id="subbold" href="phone_directory.php">Add Phone Directory</a></li> -->
-                                                
-										 
-                                                    </ul>
-                                                </li>
-                                            
-											
-											                  
-											         
-                                                
-                                                
-                                                <?php
-                                            }
-                                            ?>
+                                            <li style="text-align:left;">
+                                                <a href="javascript:void()" id="blds" class="has-ul"><i class="fa fa-newspaper-o" style="font-size:16px"></i><span style="color:white;">Menu Bar</span>
+                                                </a>
+                                                <ul class="hidden-ul" style="margin-top:-2px;"> 
+                                                    <li>
+                                                        <a id="subbold" href="world.php">Select Category
+                                                        </a>
+                                                    </li>
+                                                </ul>
+                                            </li>
+                                            <!-- <li style="text-align:left;">
+                                                <a href="javascript:void()" id="blds"><i class="fa fa-newspaper-o" style="font-size:16px"></i><span style="color:white;">NEWS</span>
+                                                </a>
+                                            </li> -->
+                                            <li>
+                                                <a href="news_worldreports.php?data=<?php echo "Industry_News"; ?>" style="color:white;"><i class="fa fa-newspaper-o" style="font-size:16px"></i><span style="color:white;">NEWS</span>
+                                                </a>
+                                            </li>
+                                            <li>
+                                                <a href="news_worldreports.php?data=<?php echo "Health_and_Life_Style"; ?>" style="color:white;"><i class="fa fa-newspaper-o" style="font-size:16px"></i><span style="color:white;">FARMER'S CLUB</span>
+                                                </a>
+                                            </li>
+                                            <li style="text-align:left;">
+                                                <a href="news_worldreports.php?data=<?php echo "Magazines"; ?>" style="color:white;"><i class="fa fa-newspaper-o" style="font-size:16px"></i><span style="color:white;">MAGAZINES</span>
+                                                </a>
+                                            </li>
+                                            <li style="text-align:left;">
+                                                <a href="news_worldreports.php?data=<?php echo "Success_Stories"; ?>" style="color:white;"><i class="fa fa-newspaper-o" style="font-size:16px"></i><span style="color:white;">SUCCESS STORIES</span>
+                                                </a>
+                                            </li>
+                                            <li style="text-align:left;">
+                                                <a href="news_worldreports.php?data=<?php echo "Co-operative's"; ?>" style="color:white;"><i class="fa fa-newspaper-o" style="font-size:16px"></i><span style="color:white;">CO-OPERATIVE'S</span>
+                                                </a>
+                                            </li>
+                                            <li style="text-align:left;">
+                                                <a href="news_worldreports.php?data=<?php echo "ngo"; ?>" style="color:white;"><i class="fa fa-newspaper-o" style="font-size:16px"></i><span style="color:white;">NGO's</span>
+                                                </a>
+                                            </li>
+                                            <li style="text-align:left;">
+                                                <a href="news_worldreports.php?data=<?php echo "fpo"; ?>" style="color:white;"><i class="fa fa-newspaper-o" style="font-size:16px"></i><span style="color:white;">FPO's</span>
+                                                </a>
+                                            </li>
+                                            <li style="text-align:left;">
+                                                <a href="news_worldreports.php?data=<?php echo "Nurseries"; ?>" style="color:white;"><i class="fa fa-newspaper-o" style="font-size:16px"></i><span style="color:white;">NURSERIE'S</span>
+                                                </a>
+                                            </li>
+                                            <?php } ?>
                                             
                                            
                                       

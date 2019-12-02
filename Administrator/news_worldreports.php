@@ -9,6 +9,7 @@ require_once("config/dbconfig.php");
 $getsignle = new Dbcon;
 $getsignle->is_session();
 
+$categId = $_GET['data'];
 
 if(isset($_GET['unap']))
 {
@@ -41,18 +42,18 @@ if(isset($_GET['ap']))
     $id=$_GET['ap'];
     $date=date('Y-m-d');
     if($_SESSION['client'] == 3){
-    	// $id=base64_decode($_GET['ap']);
     	$qry=mysqli_query($dbc,"update news_world_news set mondal_status='1' where id='".$id."' ");
+    	$status = 3;
     }
     else if($_SESSION['client'] == 2){
 
     	$qry = mysqli_query($dbc,"UPDATE `news_world_news` SET `distic_status` = '1' WHERE `news_world_news`.`id` = ".$id."");
-    	$status = 1;
+    	$status = 2;
     }
     else if($_SESSION['client'] == 1){
     	// $id=base64_decode($_GET['ap']);
     	$qry=mysqli_query($dbc,"update news_world_news set state_status='1' where id='".$id."' ");
-    	$status = 0;
+    	$status = 1;
     }
     
     
@@ -392,8 +393,11 @@ if(isset($_GET['view']))
     <div class="col-sm-12" style="margin:10px 0px 0px 0px;padding:15px;border:0px solid grey;">	
 	<div class="col-sm-9" id="edu_type_label" style="padding:0px;font-size:16px;margin-top:30px;">View Content Reports</div>
 	<div class="col-sm-3" id="edu_type_label" style="font-size:16px;padding-bottom:5px;">
-	<span id="edu_view" style="float:right;font-size:12px;text-shadow:0px 0px 0px red;background-color:red;border-radius:3px;padding:2px 5px 2px 5px;">
-	<a href="world.php" style="color:white;">  + Add   </a></span>
+	<span id="edu_view" style="float:right;">
+	
+	<button class="btn btn-primary" type="button"><a href="world.php" style="color: white">+ Add</a></button></span>
+	<button type="button" class="btn btn-outline-secondary" style="margin-left: 50%"><a href="news_worldreports.php"> Reset </a></button>
+	<!-- <button type="reset" style="margin-left: 56%"><a href="news_worldreports.php"> Reset </a></button> -->
 	</div>
 	<div class="col-sm-12" id="b_contenta" style="background-color:#F8F8F8;padding:0px 0px 10px 0px;">
 
@@ -426,15 +430,29 @@ if(isset($_GET['view']))
         }
         else if($_SESSION['client'] == 3)
         {
-        	$query = "SELECT * FROM news_world_news WHERE posted_by = 4 order by category  asc";	
+        	if($categId){
+        		$query = "SELECT * FROM news_world_news WHERE posted_by = 4 AND category = '".$categId."' order by category  asc";
+        	}
+        	else{
+        		$query = "SELECT * FROM news_world_news WHERE posted_by = 4 order by category  asc";
+        	}
+        		
         }
         else if($_SESSION['client'] == 2)
         {
-        	$query = "SELECT n.*,l.id as lid FROM news_world_news n left join news_world_action_log l on n.id=l.news_world_id WHERE l.approved_by = 3";
+        	if($categId){
+        		$query = "SELECT n.*,l.id as lid FROM news_world_news n left join news_world_action_log l on n.id=l.news_world_id WHERE n.category = '".$categId."' AND l.approved_by = 3";
+        	}else{
+        		$query = "SELECT n.*,l.id as lid FROM news_world_news n left join news_world_action_log l on n.id=l.news_world_id WHERE l.approved_by = 3 ";
+        	}
         }
         else if($_SESSION['client'] == 1)
         {
-        	$query = "SELECT n.*,l.status as lstatus,l.id as lid FROM news_world_news n left join news_world_action_log l on n.id=l.news_world_id WHERE l.approved_by = 2";
+        	if($categId){
+	        	$query = "SELECT n.*,l.status as lstatus,l.id as lid FROM news_world_news n left join news_world_action_log l on n.id=l.news_world_id WHERE l.approved_by = 2 AND category = '".$categId."' ";
+	        }else{
+	        	$query = "SELECT n.*,l.status as lstatus,l.id as lid FROM news_world_news n left join news_world_action_log l on n.id=l.news_world_id WHERE l.approved_by = 2";
+	        }
         }
 		
     	$sele = mysqli_query($dbc,$query);

@@ -229,8 +229,9 @@
                         <nav class="nav" >
                             <ul>
                                 <li><a href="index.php" title="Home" style="color:orangered;">Home</a></li>
-                                <li>
-                                   <a href="menu_content.php?News-Industry&data=<?php echo(base64_encode("Industry_News")); ?>&name=<?php echo(base64_encode("News")); ?>" style="color:orangered;">News</a>  </li>                                  <!-- <ul style="display: none;">
+                                <!-- <li>
+                                   <a href="menu_content.php?News-Industry&data=<?php //echo(base64_encode("Industry_News")); ?>&name=<?php //echo(base64_encode("News")); ?>" style="color:orangered;">News</a>  </li> -->
+                                   <li><a href="menu_content.php?News-Agriculture-World&data=<?php echo(base64_encode("Industry_News")); ?>&name=<?php echo(base64_encode("Industry_News")); ?>" style="color:orangered;">News</a></li>                                  <!-- <ul style="display: none;">
                                         <li><a href="menu_content.php?News-Latest-Stories&data=<?php echo(base64_encode("Latest_News")); ?>&name=<?php echo(base64_encode("Latest Stories")); ?>" style="color:orangered;">Latest Stories</a></li>
                                         <li><a href="menu_content.php?News-Industry&data=<?php echo(base64_encode("Industry_News")); ?>&name=<?php echo(base64_encode("Industry News")); ?>" style="color:orangered;">Industry News</a></li>
                                         <li><a href="menu_content.php?News-Product-Launch&data=<?php echo(base64_encode("Product_Launch")); ?>&name=<?php echo(base64_encode("Product Launch")); ?>" style="color:orangered;">Product Launch</a></li>
